@@ -1,1 +1,7 @@
-Run `make' to compile
+To compile, run:
+
+>> make   (assuming the Makefile is present)
+
+or
+
+>> gcc -lm -Wall NestIndex.c -o NestIndex
