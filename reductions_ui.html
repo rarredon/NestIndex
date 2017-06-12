@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+ <title>Reductions</title>
+<script type = "text/javascript" src = "./reductions_new.js"></script>
+<link rel="stylesheet" type="text/css" href="../styles.css"
+
+</head>
+<body>
+
+<h1>Double Occurrence Word Reductions and Nesting Index Calculator</h1>
+<div class="main">
+
+  <div class="instructions">
+	<B><big>Instructions:</big></B>
+    <p>
+    Use the text entry to the left to enter a double occurrence word, e.g. 123321 or 1,2,3,3,2,1.
+    To also consider cyclic and reverse equivalences of your word check the box below.
+    As you make changes the reductions will appear below.
+    </p>
+  </div>
+    <form class="nestform">
+      <b>Word</b>: <input type = "text" id = "WordInput" onkeyup = "perform_reduction()"/>
+      <br/>
+      <b>Cyclic and Reverse Equivalences </b><input type = "checkbox" id = "circular" onchange = "perform_reduction()"/>
+    </form>
+  <p>
+
+  </p>
+  <div class="reductions" id="reductions"></div>
+  </div>
+  <footer><a href="../research.html">Back to research</a></footer>
+</body>
+</html>
