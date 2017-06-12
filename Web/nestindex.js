@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-//reductions.js
+//nestindex.js
 //Purpose: This program houses the functions needed to reduce an
 //         assembly word and write out the proper reductions
 //         to an HTML document
