@@ -1,0 +1,118 @@
+/*general*/
+h1 {
+    text-align:center;
+    /*color:#163061; */
+    color:#CFC493;
+}
+img{
+    background-color:White;
+    border-style:solid;
+    border-width:2px;
+    border-color:#CFC493
+}
+body {
+    /* background-color:#C4E1FF; */
+    color:white;
+    background-color:#006747;
+}
+footer {
+    font-size:small;
+    text-align:center;
+    width:100%;
+    height:80px;
+    position:abolute;
+    bottom:0;
+    left:0;
+}
+p{
+    text-align:justify;
+}
+a:link{
+    color:tan;
+}
+a:visited{
+    color:tan;
+}
+a:hover{
+    color:orange;
+}
+a:active{
+    color:red;
+}
+figure,figcaption {
+    display: block; 
+    font-size: small; 
+    text-align:center;
+}
+.main{
+margin: 50px 5%;
+}
+
+
+/*navlist*/
+.navlist{
+    text-align: center
+}
+li.navlist{
+    display: inline;
+    list-style-type: none;
+    padding-right:20px
+}
+
+
+/*About me page*/
+.wisconsin{
+	float:right;
+	clear:right;
+	width:40%;
+}
+
+/*research page*/
+.GroupPic{
+width:100%;
+max-width:420px;
+}
+.group{
+float:right;
+clear:right;
+width:40%;
+}
+
+/*links page*/
+.linkdivs{
+    float:left;
+    width:45%;
+}
+.linkdiv{
+    float:left;
+    width:90%;
+    max-width:600px;
+    padding:30px;
+}
+.linkpic{
+    width:100%;
+    text-align:center;
+    /*background-color:#006747;*/
+}
+.misclinks{
+    float:right;
+    text-align:left;
+    width:45%;
+    max-width:500px;
+    padding:30px;
+}
+
+/*reductions page*/
+.instructions{
+    padding:30px;
+}
+.nestform{
+    padding:30px
+}
+.reductions{
+    text-align:center;
+    margin-top:50px;
+    margin-left:100px;
+    clear:both;
+}
+
