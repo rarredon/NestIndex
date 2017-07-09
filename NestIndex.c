@@ -48,13 +48,13 @@
 // Function templates
 unsigned short ** step(unsigned short *, int, int *, int *);
 int get_NI(unsigned short *, int);
-unsigned short * getLetters(unsigned short *, int);
+unsigned short * get_letters(unsigned short *, int);
 int * occurrences(unsigned short *, int, unsigned short);
 short is_double_occurrence(unsigned short *, int);
 unsigned short ** sequences(unsigned short *, int, int *);
 unsigned short ** get_repeat_return_words(unsigned short *, int, int *);
 unsigned short * remove_seqs(unsigned short *, int, unsigned short **, int, int *);
-short isInSeq(short, unsigned short **, int);
+short is_in_seq(short, unsigned short **, int);
 unsigned short * remove_ltr(unsigned short *, int, unsigned short);
 unsigned short * relabel(unsigned short *, int);
 void print_word(unsigned short *, int, short);
@@ -296,7 +296,7 @@ unsigned short ** step(unsigned short * word, int size, int * count, int * sizes
     int new_size = 0;	// Variable gets size of first word in return_list
     // Only important size since rest will be size - 2
 	
-    letters = getLetters(word, size);
+    letters = get_letters(word, size);
     *count = 0;  // Number of words returned
 
     // If size <= 4, step results in empty word, regardless of DOW given
@@ -310,7 +310,7 @@ unsigned short ** step(unsigned short * word, int size, int * count, int * sizes
     if(reduction_list != NULL){	
 	// Checks if letters are in repeat/return word
 	for(i = 0; i < size/2; i++){		
-	    if(!isInSeq(letters[i], reduction_list, seq_count))
+	    if(!is_in_seq(letters[i], reduction_list, seq_count))
 		drop_list[drop_ctr++] = letters[i];
 	}
 	*count = drop_ctr + 1; // +1 for word - reduction_list
@@ -516,10 +516,10 @@ void copy_words(unsigned short ** dest, int * dest_sizes,
 }
 
 
-//// getLetters function
+//// get_letters function
 // Given DOW and its size, returns an array of the letters (which are ints)
 // in that word.
-unsigned short * getLetters(unsigned short * word, int size)
+unsigned short * get_letters(unsigned short * word, int size)
 {
     unsigned short * letters = calloc(size, sizeof(unsigned short));
     short notInAlphabet = 0;
@@ -566,7 +566,7 @@ short is_double_occurrence(unsigned short * word, int size)
     short ltr_ctr = 0;
     unsigned short * letters;
 	
-    letters = getLetters(word, size);
+    letters = get_letters(word, size);
     for(i = 0; i < size/2; i++){	// Iterates over ltr in letters
 	ltr_ctr = 0;
 	// Iterates over short in word and gets count of ltr in word
@@ -779,7 +779,7 @@ unsigned short * remove_seqs(unsigned short * word, int size,
     *new_size = 0;
 
     for(i = 0; i < size; i++){
-	if(!isInSeq(word[i], seqs, seq_count)){
+	if(!is_in_seq(word[i], seqs, seq_count)){
 	    new_word[*new_size] = word[i];
 	    *new_size += 1;
 	}
@@ -787,10 +787,10 @@ unsigned short * remove_seqs(unsigned short * word, int size,
     return new_word;
 }
 
-//// isInSeq function
+//// is_in_seq function
 // Given a letter and an array of words (seqs), with the number of subwords,
 // returns 1 if letter appears in one of the subwords, else 1
-short isInSeq(short letter, unsigned short ** seqs, int seq_count)
+short is_in_seq(short letter, unsigned short ** seqs, int seq_count)
 {
     unsigned short * seq;
     int i, j;
